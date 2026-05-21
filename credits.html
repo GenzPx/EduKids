@@ -1,0 +1,474 @@
+<!--
+  EduKids — Teman Belajar Si Kecil
+  File: credits.html
+  Version: 1.0.0
+  Author: GenzPx / artaDev / Xternalz
+  Description: Credits page — developer info, social links, acknowledgments
+  License: MIT
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#FF8C42">
+  <title>EduKids — Kredit</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;-webkit-text-size-adjust:100%}
+    body{
+      font-family:-apple-system,'Segoe UI',system-ui,'Noto Sans',sans-serif;
+      background:linear-gradient(135deg,#FFF8F0 0%,#FFE8D6 100%);
+      color:#2D2D2D;
+      min-height:100vh;
+      min-height:100dvh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:20px 16px 40px;
+      -webkit-user-select:none;
+      user-select:none;
+    }
+    .back-btn{
+      position:fixed;
+      top:16px;
+      left:16px;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:#FFFFFF;
+      border:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      cursor:pointer;
+      z-index:10;
+      transition:transform 0.2s ease,box-shadow 0.2s ease;
+    }
+    .back-btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+    .back-btn:active{transform:scale(0.95)}
+    .back-btn svg{width:24px;height:24px;color:#2D2D2D}
+
+    .credits-container{
+      max-width:420px;
+      width:100%;
+      text-align:center;
+      animation:fadeIn 0.6s ease;
+    }
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .credits-logo{
+      width:100px;
+      height:100px;
+      margin:40px auto 16px;
+    }
+    .credits-logo svg{width:100%;height:100%}
+
+    .credits-title{
+      font-size:1.8rem;
+      font-weight:800;
+      color:#FF8C42;
+      margin-bottom:4px;
+    }
+    .credits-tagline{
+      font-size:0.9rem;
+      color:#888;
+      margin-bottom:32px;
+    }
+    .credits-version{
+      font-size:0.75rem;
+      color:#AAA;
+      margin-bottom:32px;
+      display:block;
+    }
+
+    .dev-card{
+      background:#FFFFFF;
+      border-radius:20px;
+      padding:24px 20px;
+      box-shadow:0 4px 16px rgba(255,140,66,0.1);
+      margin-bottom:24px;
+      border:1px solid #F0E0D0;
+    }
+    .dev-photo{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      margin:0 auto 12px;
+      overflow:hidden;
+      border:3px solid #FF8C42;
+      background:#F5F5F5;
+    }
+    .dev-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .dev-photo-placeholder{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#FFB380,#FF8C42);
+      color:#FFF;
+      font-size:2rem;
+      font-weight:800;
+    }
+    .dev-name{
+      font-size:1.25rem;
+      font-weight:800;
+      color:#2D2D2D;
+      margin-bottom:2px;
+    }
+    .dev-aliases{
+      font-size:0.8rem;
+      color:#999;
+      margin-bottom:8px;
+    }
+    .dev-bio{
+      font-size:0.85rem;
+      color:#666;
+      line-height:1.5;
+      margin-bottom:16px;
+    }
+    .dev-role{
+      display:inline-block;
+      background:rgba(255,140,66,0.1);
+      color:#FF8C42;
+      font-size:0.75rem;
+      font-weight:700;
+      padding:4px 14px;
+      border-radius:20px;
+    }
+
+    .social-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+      margin-bottom:24px;
+    }
+    .social-link{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      padding:16px 8px;
+      background:#FFFFFF;
+      border-radius:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      border:1px solid #F0E0D0;
+      text-decoration:none;
+      color:#2D2D2D;
+      transition:transform 0.2s ease,box-shadow 0.2s ease;
+      cursor:pointer;
+    }
+    .social-link:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+    }
+    .social-link:active{transform:scale(0.97)}
+    .social-icon{width:32px;height:32px}
+    .social-icon svg{width:100%;height:100%}
+    .social-label{font-size:0.75rem;font-weight:700;color:#666}
+
+    .section-title{
+      font-size:1rem;
+      font-weight:700;
+      color:#2D2D2D;
+      margin:24px 0 12px;
+      text-align:left;
+    }
+
+    .tech-list{
+      text-align:left;
+      background:#FFFFFF;
+      border-radius:16px;
+      padding:16px 20px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      border:1px solid #F0E0D0;
+      margin-bottom:24px;
+    }
+    .tech-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 0;
+      font-size:0.85rem;
+      color:#555;
+      border-bottom:1px solid #F5EBE0;
+    }
+    .tech-item:last-child{border-bottom:none}
+    .tech-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      flex-shrink:0;
+    }
+
+    .footer-text{
+      font-size:0.75rem;
+      color:#AAA;
+      line-height:1.6;
+      margin-top:20px;
+    }
+    .footer-text strong{color:#FF8C42}
+
+    .mascot-footer{
+      width:80px;
+      height:80px;
+      margin:24px auto 8px;
+    }
+    .mascot-footer svg{width:100%;height:100%}
+
+    .heart{color:#E91E63;font-weight:800}
+
+    @media(prefers-color-scheme:dark){
+      body{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 100%);color:#F0F0F0}
+      .dev-card,.tech-list,.social-link{background:#16213E;border-color:#2A2A4E}
+      .back-btn{background:#16213E}
+      .back-btn svg{color:#F0F0F0}
+      .dev-name{color:#F0F0F0}
+      .dev-aliases{color:#808090}
+      .dev-bio{color:#B0B0C0}
+      .section-title{color:#F0F0F0}
+      .tech-item{color:#B0B0C0;border-bottom-color:#2A2A4E}
+      .social-label{color:#808090}
+      .social-link{color:#F0F0F0}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="history.back()" aria-label="Kembali">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 19l-7-7 7-7"/>
+    </svg>
+  </button>
+
+  <div class="credits-container">
+
+    <!-- Logo -->
+    <div class="credits-logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="85" width="60" height="20" rx="4" fill="#FF8C42" opacity="0.9"/>
+        <rect x="32" y="87" width="28" height="16" rx="2" fill="#FFB380"/>
+        <rect x="62" y="87" width="26" height="16" rx="2" fill="#FFCCA0"/>
+        <line x1="60" y1="87" x2="60" y2="103" stroke="#E07030" stroke-width="2"/>
+        <circle cx="60" cy="45" r="28" fill="#FFF" stroke="#2D2D2D" stroke-width="2"/>
+        <circle cx="38" cy="22" r="10" fill="#2D2D2D"/>
+        <circle cx="38" cy="22" r="5" fill="#E0E0E0"/>
+        <circle cx="82" cy="22" r="10" fill="#2D2D2D"/>
+        <circle cx="82" cy="22" r="5" fill="#E0E0E0"/>
+        <ellipse cx="48" cy="42" rx="9" ry="8" fill="#2D2D2D"/>
+        <ellipse cx="72" cy="42" rx="9" ry="8" fill="#2D2D2D"/>
+        <circle cx="48" cy="41" r="3.5" fill="#FFF"/>
+        <circle cx="72" cy="41" r="3.5" fill="#FFF"/>
+        <ellipse cx="60" cy="52" rx="3.5" ry="2.5" fill="#2D2D2D"/>
+        <path d="M53 56Q60 63 67 56" fill="none" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="40" cy="52" r="4" fill="#FFB3B3" opacity="0.5"/>
+        <circle cx="80" cy="52" r="4" fill="#FFB3B3" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <h1 class="credits-title">EduKids</h1>
+    <p class="credits-tagline">Teman Belajar Si Kecil</p>
+    <span class="credits-version">Version 1.0.0</span>
+
+    <!-- Developer Card -->
+    <div class="dev-card">
+      <div class="dev-photo">
+        <img src="foto.jpg" alt="GenzPx" onerror="this.parentElement.innerHTML='<div class=dev-photo-placeholder>G</div>'">
+      </div>
+      <div class="dev-name">GenzPx</div>
+      <div class="dev-aliases">artaDev / Xternalz</div>
+      <p class="dev-bio">Developer & kreator EduKids. Passionate tentang pendidikan anak dan teknologi. Membangun aplikasi belajar yang aman, menyenangkan, dan bermanfaat untuk anak-anak Indonesia.</p>
+      <span class="dev-role">Lead Developer & Designer</span>
+    </div>
+
+    <!-- Social Links -->
+    <h3 class="section-title">Dukungan & Kontak</h3>
+    <div class="social-grid">
+
+      <!-- GitHub -->
+      <a class="social-link" href="https://github.com/GenzPx" target="_blank" rel="noopener noreferrer">
+        <div class="social-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#24292E"/>
+            <path d="M16 6C10.48 6 6 10.48 6 16c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0116 9.5c.85 0 1.7.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0026 16c0-5.52-4.48-10-10-10z" fill="white"/>
+          </svg>
+        </div>
+        <span class="social-label">GitHub</span>
+      </a>
+
+      <!-- Trakteer -->
+      <a class="social-link" href="https://trakteer.id/GenzPx" target="_blank" rel="noopener noreferrer">
+        <div class="social-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#BE1E2D"/>
+            <path d="M20 10h-2l-1 3h-2l-1-3h-2l-1 3H9v2h1.5L12 22h2l1-4h2l1 4h2l1.5-7H23v-2h-2l-1-3z" fill="white"/>
+          </svg>
+        </div>
+        <span class="social-label">Trakteer</span>
+      </a>
+
+      <!-- Saweria -->
+      <a class="social-link" href="https://saweria.co/GenzPx" target="_blank" rel="noopener noreferrer">
+        <div class="social-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#F59E0B"/>
+            <path d="M16 8c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="white"/>
+            <circle cx="16" cy="16" r="3" fill="white"/>
+          </svg>
+        </div>
+        <span class="social-label">Saweria</span>
+      </a>
+
+      <!-- WhatsApp Channel -->
+      <a class="social-link" href="https://whatsapp.com/channel/GenzPx" target="_blank" rel="noopener noreferrer">
+        <div class="social-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" fill="#25D366"/>
+            <path d="M16 8a8 8 0 00-6.9 12l-1.1 4 4.1-1.1A8 8 0 1016 8zm4.4 11.2c-.2.5-1 1-1.6 1.1-.4.1-.9.2-3-1-2.5-1.2-4.1-3.8-4.2-4-.1-.2-.9-1.2-.9-2.3s.6-1.6.8-1.8c.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4s.6 1.5.7 1.6c.1.1.1.3 0 .4-.1.2-.2.3-.3.4l-.4.4c-.1.1-.3.3-.1.6s.7 1.2 1.5 1.9c1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1.2-.2.6-.8.8-1 .2-.3.3-.2.6-.1.3.1 1.6.8 1.9 1 .3.1.5.2.6.3.1.2.1.8-.1 1.3z" fill="white"/>
+          </svg>
+        </div>
+        <span class="social-label">WA Channel</span>
+      </a>
+
+    </div>
+
+    <!-- Tech Stack -->
+    <h3 class="section-title">Teknologi</h3>
+    <div class="tech-list">
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#E44D26"></span>
+        HTML5 Semantic
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#264DE4"></span>
+        CSS3 Vanilla (Mobile-First Responsive)
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#F7DF1E"></span>
+        JavaScript ES6+ Vanilla
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#FF8C42"></span>
+        Canvas API (Tracing)
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#9B59B6"></span>
+        Web Audio API (Sound Effects)
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#4CAF50"></span>
+        LocalStorage (Offline Data)
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#4ECDC4"></span>
+        Inline SVG (All Icons & Mascot)
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <h3 class="section-title">Tentang Aplikasi</h3>
+    <div class="tech-list">
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#FF6B6B"></span>
+        37 Pelajaran Interaktif
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#4ECDC4"></span>
+        666 Soal Unik
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#45B7D1"></span>
+        9 Tipe Pertanyaan Berbeda
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#96CEB4"></span>
+        7 Modul Pembelajaran
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#F0A500"></span>
+        23 Lencana Pencapaian
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#9B59B6"></span>
+        30 Stiker Koleksi
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#E74C8B"></span>
+        12 Kostum Dacorta
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#FFD700"></span>
+        50 Level Progresif
+      </div>
+    </div>
+
+    <!-- Special Thanks -->
+    <h3 class="section-title">Terima Kasih</h3>
+    <div class="tech-list">
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#E91E63"></span>
+        Semua anak Indonesia yang semangat belajar
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#FF8C42"></span>
+        Orang tua yang mendukung pendidikan anak
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#4CAF50"></span>
+        Komunitas developer Indonesia
+      </div>
+      <div class="tech-item">
+        <span class="tech-dot" style="background:#2196F3"></span>
+        Kamu yang sudah menggunakan EduKids
+      </div>
+    </div>
+
+    <!-- Mascot Footer -->
+    <div class="mascot-footer">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="90" rx="32" ry="25" fill="#FFF" stroke="#2D2D2D" stroke-width="2"/>
+        <ellipse cx="60" cy="88" rx="18" ry="14" fill="#F5F5F5"/>
+        <ellipse cx="30" cy="82" rx="12" ry="8" fill="#2D2D2D" transform="rotate(-20 30 82)"/>
+        <ellipse cx="90" cy="82" rx="12" ry="8" fill="#2D2D2D" transform="rotate(20 90 82)"/>
+        <ellipse cx="45" cy="110" rx="10" ry="7" fill="#2D2D2D"/>
+        <ellipse cx="75" cy="110" rx="10" ry="7" fill="#2D2D2D"/>
+        <circle cx="60" cy="48" r="30" fill="#FFF" stroke="#2D2D2D" stroke-width="2"/>
+        <circle cx="36" cy="22" r="12" fill="#2D2D2D"/>
+        <circle cx="36" cy="22" r="6" fill="#E0E0E0"/>
+        <circle cx="84" cy="22" r="12" fill="#2D2D2D"/>
+        <circle cx="84" cy="22" r="6" fill="#E0E0E0"/>
+        <ellipse cx="46" cy="44" rx="11" ry="10" fill="#2D2D2D" transform="rotate(-5 46 44)"/>
+        <ellipse cx="74" cy="44" rx="11" ry="10" fill="#2D2D2D" transform="rotate(5 74 44)"/>
+        <path d="M42 42Q46 38 50 42" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+        <path d="M70 42Q74 38 78 42" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="60" cy="55" rx="4" ry="3" fill="#2D2D2D"/>
+        <path d="M48 58Q60 70 72 58" fill="#FF8C8C" stroke="#2D2D2D" stroke-width="1.5"/>
+        <circle cx="38" cy="55" r="6" fill="#FFB3B3" opacity="0.6"/>
+        <circle cx="82" cy="55" r="6" fill="#FFB3B3" opacity="0.6"/>
+        <g fill="#FFD700">
+          <polygon points="22,30 24,26 26,30"/>
+          <polygon points="96,28 98,24 100,28"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="footer-text">
+      Dibuat dengan <span class="heart">&#10084;</span> oleh <strong>GenzPx</strong><br>
+      untuk anak-anak Indonesia<br><br>
+      <strong>EduKids</strong> v1.0.0<br>
+      100% Offline &bull; Tanpa Iklan &bull; Aman untuk Anak<br>
+      &copy; 2025 GenzPx. All rights reserved.
+    </p>
+
+  </div>
+
+</body>
+  </html>
