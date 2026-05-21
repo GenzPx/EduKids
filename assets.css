@@ -1,0 +1,662 @@
+/*
+  EduKids — Teman Belajar Si Kecil
+  File: assets.css
+  Version: 1.0.0
+  Author: GenzPx / artaDev / Xternalz
+  Description: SVG assets as CSS backgrounds and decorative elements
+  License: MIT
+*/
+
+/* ================================================
+   SECTION 1: DECORATIVE BACKGROUNDS
+   ================================================ */
+
+/* Dotted pattern for cards */
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Wavy bottom decoration */
+.wave-bottom::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 V40 H0Z' fill='%23FFF8F0'/%3E%3C/svg%3E") repeat-x bottom;
+  background-size: 600px 24px;
+}
+
+[data-theme="dark"] .wave-bottom::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 V40 H0Z' fill='%231A1A2E'/%3E%3C/svg%3E") ;
+}
+
+/* ================================================
+   SECTION 2: SPLASH BACKGROUND DECORATION
+   ================================================ */
+
+.splash::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.splash::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* ================================================
+   SECTION 3: CATEGORY CARD BACKGROUND PATTERNS
+   ================================================ */
+
+.category-card[data-cat="math"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='4' y='18' font-size='16' font-weight='bold' fill='%23FF6B6B'%3E%2B%3C/text%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="read"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='2' y='18' font-size='14' font-weight='bold' fill='%234ECDC4'%3EAa%3C/text%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="write"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L16 4' stroke='%2345B7D1' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="intro"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='10' r='6' fill='none' stroke='%2396CEB4' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="logic"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='8' cy='10' r='5' fill='none' stroke='%23F0A500' stroke-width='2'/%3E%3Ccircle cx='16' cy='14' r='5' fill='none' stroke='%23F0A500' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="english"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='2' y='18' font-size='14' font-weight='bold' fill='%239B59B6'%3EEN%3C/text%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.category-card[data-cat="typing"]::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='8' width='18' height='12' rx='2' fill='none' stroke='%23E74C8B' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/* ================================================
+   SECTION 4: HOME PAGE DECORATIVE ELEMENTS
+   ================================================ */
+
+/* Subtle stars in background */
+.home-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpolygon points='10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8' fill='%23FFD700' opacity='0.04'/%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-theme="dark"] .home-header::before {
+  opacity: 0.5;
+}
+
+/* ================================================
+   SECTION 5: XP BAR SHIMMER EFFECT
+   ================================================ */
+
+.xp-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+.xp-bar-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ================================================
+   SECTION 6: RESULT PAGE DECORATIVE ELEMENTS
+   ================================================ */
+
+.result-container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  z-index: -1;
+  animation: float 4s ease-in-out infinite;
+}
+
+.result-container::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  right: -15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--xp-bg);
+  z-index: -1;
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+.result-container {
+  position: relative;
+}
+
+/* ================================================
+   SECTION 7: BADGE SHINE EFFECT
+   ================================================ */
+
+.badge-item:not(.locked)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.badge-item:not(.locked):hover::after {
+  left: 150%;
+}
+
+.badge-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================
+   SECTION 8: PATH NODE GLOW
+   ================================================ */
+
+.path-node.available .path-node-btn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  z-index: -1;
+  animation: nodeGlow 2s ease-in-out infinite;
+}
+
+@keyframes nodeGlow {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.15); }
+}
+
+.path-node-btn {
+  position: relative;
+}
+
+/* ================================================
+   SECTION 9: LEVEL UP MODAL DECORATION
+   ================================================ */
+
+.modal-celebration::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: calc(var(--radius-xl) + 2px);
+  background: linear-gradient(135deg, #FFD700, #FF8C42, #7C4DFF, #4ECDC4, #FFD700);
+  background-size: 400% 400%;
+  animation: gradientBorder 3s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.modal-celebration {
+  position: relative;
+  overflow: visible;
+}
+
+/* ================================================
+   SECTION 10: OUTFIT EQUIPPED INDICATOR
+   ================================================ */
+
+.outfit-item.equipped::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M5 13l4 4L19 7' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+  z-index: 1;
+}
+
+.outfit-item {
+  position: relative;
+}
+
+/* ================================================
+   SECTION 11: DAILY GOAL COMPLETION GLOW
+   ================================================ */
+
+.daily-goal-card.completed::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--correct);
+  opacity: 0;
+  z-index: -1;
+  animation: goalGlow 2s ease-in-out infinite;
+}
+
+@keyframes goalGlow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.08; }
+}
+
+.daily-goal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================
+   SECTION 12: STREAK FIRE ANIMATION
+   ================================================ */
+
+.stat-item:nth-child(2) .stat-icon {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* ================================================
+   SECTION 13: BOTTOM NAV ACTIVE DOT (Alternative)
+   ================================================ */
+
+/* Additional ripple on nav button tap */
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.nav-btn:active::before {
+  opacity: 0.08;
+  transform: scale(1);
+}
+
+.nav-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================
+   SECTION 14: LESSON PLAYER GRADIENT TOP
+   ================================================ */
+
+#pageLesson .lesson-header {
+  background: linear-gradient(to bottom, var(--bg), var(--bg) 90%, transparent);
+}
+
+/* ================================================
+   SECTION 15: MEMORY CARD HOVER
+   ================================================ */
+
+.memory-card:not(.flipped):not(.matched):hover .memory-card-inner {
+  transform: rotateY(10deg);
+}
+
+/* ================================================
+   SECTION 16: COLLECTION TAB UNDERLINE VARIANT
+   ================================================ */
+
+/* Pill shape already applied in style.css, this adds micro-interaction */
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.tab-btn {
+  position: relative;
+}
+
+/* ================================================
+   SECTION 17: SETTINGS ITEM HOVER FEEDBACK
+   ================================================ */
+
+.setting-item-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.setting-item-btn:active::after {
+  opacity: 0.06;
+}
+
+.setting-item-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================
+   SECTION 18: ANSWER BUTTON LETTER LABELS
+   ================================================ */
+
+/* Different colors for each label */
+.answer-btn:nth-child(1) .answer-btn-label { color: var(--cat-math); }
+.answer-btn:nth-child(2) .answer-btn-label { color: var(--cat-read); }
+.answer-btn:nth-child(3) .answer-btn-label { color: var(--cat-logic); }
+.answer-btn:nth-child(4) .answer-btn-label { color: var(--cat-english); }
+
+/* ================================================
+   SECTION 19: LOADING SKELETON (for future use)
+   ================================================ */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ================================================
+   SECTION 20: SMOOTH PAGE TRANSITION CLASSES
+   ================================================ */
+
+.page-enter {
+  animation: pageIn 0.35s ease-out;
+}
+
+.page-exit {
+  animation: fadeOut 0.2s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(8px); }
+}
+
+/* ================================================
+   SECTION 21: CANVAS TRACING GUIDE COLORS
+   ================================================ */
+
+#lessonCanvas {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+[data-theme="dark"] #lessonCanvas {
+  background-color: var(--bg-surface);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* ================================================
+   SECTION 22: TYPING INPUT CARET
+   ================================================ */
+
+.typing-input {
+  caret-color: var(--accent);
+}
+
+/* ================================================
+   SECTION 23: STICKER UNLOCK ANIMATION
+   ================================================ */
+
+.sticker-item:not(.locked) {
+  animation: stickerAppear 0.4s ease-out both;
+}
+
+@keyframes stickerAppear {
+  from { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  to { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* ================================================
+   SECTION 24: ARRANGE LETTER DROP EFFECT
+   ================================================ */
+
+.arrange-slot.filled {
+  animation: slotDrop 0.3s ease;
+}
+
+@keyframes slotDrop {
+  0% { transform: scale(1.2); }
+  50% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* ================================================
+   SECTION 25: MATCH ITEM CONNECTED LINE HINT
+   ================================================ */
+
+.match-item.matched {
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  transform: scale(0.95);
+}
+
+/* ================================================
+   SECTION 26: HINT BUBBLE BOUNCE
+   ================================================ */
+
+.hint-bubble {
+  animation: hintBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes hintBounce {
+  0% { transform: translateX(-50%) translateY(20px) scale(0.8); opacity: 0; }
+  60% { transform: translateX(-50%) translateY(-4px) scale(1.02); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+}
+
+/* ================================================
+   SECTION 27: COMBO INDICATOR RAINBOW BORDER
+   ================================================ */
+
+.combo-indicator::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, #FF6B6B, #FFD700, #4ECDC4, #9B59B6, #FF6B6B);
+  background-size: 300% 100%;
+  animation: rainbowBorder 1.5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rainbowBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.combo-indicator {
+  position: relative;
+  overflow: visible;
+}
+```
+
+---
+
+## File 2: soundApi.js
+
+```javascript
+/*
+  EduKids — Teman Belajar Si Kecil
+  File: soundApi.js
+  Version: 1.0.0
+  Author: GenzPx / artaDev / Xternalz
+  Description: Proxy shim — forwards all calls to Sound internal module in app.js.
+               This file exists solely so that <script src="soundApi.js"> in index.html
+               does not cause a 404 error. All real sound logic lives in app.js.
+  License: MIT
+*/
+
+const SoundAPI = {
+  play(name) {
+    if (typeof Sound !== 'undefined' && Sound.play) {
+      Sound.play(name);
+    }
+  },
+  init() {
+    if (typeof Sound !== 'undefined' && Sound.init) {
+      Sound.init();
+    }
+  },
+  setEnabled(val) {
+    if (typeof Sound !== 'undefined' && Sound.setEnabled) {
+      Sound.setEnabled(val);
+    }
+  },
+  isEnabled() {
+    if (typeof Sound !== 'undefined' && Sound.isEnabled) {
+      return Sound.isEnabled();
+    }
+    return true;
+  }
+};
